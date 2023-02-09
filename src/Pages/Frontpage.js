@@ -4,9 +4,12 @@ import {
   ContainerDiv,
   StyledColumnDiv,
   StyledH1,
+  StyledH2,
+  StyledLineDiv,
   StyledP,
   StyledRowDiv,
   StyledSection,
+  StyledSpan,
 } from "../Components/StyledComponents";
 
 export const Frontpage = () => {
@@ -46,7 +49,10 @@ export const Frontpage = () => {
             {item.meanings.map((item, index) => {
               return (
                 <StyledColumnDiv key={index}>
-                  <h2>{item.partOfSpeech}</h2>
+                  <StyledRowDiv>
+                    <StyledH2>{item.partOfSpeech}</StyledH2>
+                    <StyledLineDiv />
+                  </StyledRowDiv>
                   <p>meaning</p>
                   {item.definitions.map((item, index) => {
                     return (

@@ -35,3 +35,13 @@ export const StyledH1 = styled.h1`
 export const StyledP = styled.p`
   color: purple;
 `;
+
+export const StyledH2 = styled.h2``;
+
+export const StyledLineDiv = styled.div`
+  background-color: gray;
+  height: 0.1em;
+  width: 100%;
+  opacity: 0.5;
+  margin-left: 1em;
+`;
