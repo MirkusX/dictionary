@@ -12,6 +12,9 @@ export const Frontpage = () => {
       });
     });
   }, []);
+  const play = () => {
+    audio.play();
+  };
 
   return (
     <section>
@@ -23,6 +26,12 @@ export const Frontpage = () => {
           <div key={index}>
             <div>
               <h1>{item.word}</h1>
+              {item.phonetics.slice(1, 2).map((item, index) => {
+                return <p>{item.text}</p>;
+              })}
+            </div>
+            <div>
+              <button onClick={() => play()}>play</button>
             </div>
           </div>
         );
