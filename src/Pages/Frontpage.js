@@ -1,5 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../Components/Context";
+import {
+  ContainerDiv,
+  StyledColumnDiv,
+  StyledH1,
+  StyledP,
+  StyledRowDiv,
+  StyledSection,
+} from "../Components/StyledComponents";
 
 export const Frontpage = () => {
   const { data, setData } = useContext(DataContext);
@@ -17,41 +25,44 @@ export const Frontpage = () => {
   };
 
   return (
-    <section>
+    <StyledSection>
       <div>
         <h1>Frontpage</h1>
       </div>
       {data.map((item, index) => {
         return (
-          <div key={index}>
-            <div>
-              <h1>{item.word}</h1>
-              {item.phonetics.slice(1, 2).map((item, index) => {
-                return <p>{item.text}</p>;
-              })}
-            </div>
-            <div>
-              <button onClick={() => play()}>play</button>
-            </div>
+          <ContainerDiv key={index}>
+            <StyledRowDiv>
+              <div>
+                <StyledH1>{item.word}</StyledH1>
+                {item.phonetics.slice(1, 2).map((item, index) => {
+                  return <StyledP>{item.text}</StyledP>;
+                })}
+              </div>
+              <div>
+                <button onClick={() => play()}>play</button>
+              </div>
+            </StyledRowDiv>
             {item.meanings.map((item, index) => {
               return (
-                <div key={index}>
+                <StyledColumnDiv key={index}>
                   <h2>{item.partOfSpeech}</h2>
+                  <p>meaning</p>
                   {item.definitions.map((item, index) => {
                     return (
-                      <div key={index}>
-                        <p>{item.definition}</p>
+                      <ul key={index}>
+                        <li>{item.definition}</li>
                         <p>{item.example}</p>
-                      </div>
+                      </ul>
                     );
                   })}
                   {item.synonyms.length > 0 && <p>Synonyms {item.synonyms}</p>}
-                </div>
+                </StyledColumnDiv>
               );
             })}
-          </div>
+          </ContainerDiv>
         );
       })}
-    </section>
+    </StyledSection>
   );
 };
