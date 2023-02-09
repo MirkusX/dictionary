@@ -11,6 +11,11 @@ export const StyledRowDiv = styled.div`
 export const StyledColumnDiv = styled.div`
   text-align: left;
   width: 100%;
+  ${(props) => {
+    if (props.source)
+      return `
+    width: 50%;`;
+  }}
 `;
 
 export const ContainerDiv = styled.div`
@@ -18,6 +23,14 @@ export const ContainerDiv = styled.div`
   flex-direction: column;
   align-items: center;
   width: 50%;
+  border-bottom: 0.1em gray solid;
+  ${(props) => {
+    if (props.upper)
+      return `
+    display: block;
+    border: none;
+    text-align: left;`;
+  }}
 `;
 
 export const StyledSection = styled.section`
@@ -34,14 +47,27 @@ export const StyledH1 = styled.h1`
 
 export const StyledP = styled.p`
   color: purple;
+  ${(props) => {
+    if (props.gray)
+      return `
+    color: gray;`;
+  }}
+  ${(props) => {
+    if (props.grayCursive)
+      return `
+    color: gray;
+    font-style: italic`;
+  }}
 `;
 
-export const StyledH2 = styled.h2``;
+export const StyledH2 = styled.h2`
+  font-style: italic;
+`;
 
 export const StyledLineDiv = styled.div`
   background-color: gray;
   height: 0.1em;
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.3;
   margin-left: 1em;
 `;
