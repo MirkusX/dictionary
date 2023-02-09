@@ -33,6 +33,25 @@ export const Frontpage = () => {
             <div>
               <button onClick={() => play()}>play</button>
             </div>
+            {item.meanings.map((item, index) => {
+              return (
+                <div key={index}>
+                  <h2>{item.partOfSpeech}</h2>
+                  {item.definitions.map((item, index) => {
+                    console.log(item.synonyms);
+                    if (item.synonyms.length === 0) {
+                      item.synonyms = "none";
+                    }
+                    return (
+                      <div key={index}>
+                        <p>{item.definition}</p>
+                        <p>Synomyms {item.synonyms}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
           </div>
         );
       })}
