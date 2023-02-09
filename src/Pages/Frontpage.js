@@ -38,17 +38,14 @@ export const Frontpage = () => {
                 <div key={index}>
                   <h2>{item.partOfSpeech}</h2>
                   {item.definitions.map((item, index) => {
-                    console.log(item.synonyms);
-                    if (item.synonyms.length === 0) {
-                      item.synonyms = "none";
-                    }
                     return (
                       <div key={index}>
                         <p>{item.definition}</p>
-                        <p>Synomyms {item.synonyms}</p>
+                        <p>{item.example}</p>
                       </div>
                     );
                   })}
+                  {item.synonyms.length > 0 && <p>Synonyms {item.synonyms}</p>}
                 </div>
               );
             })}
