@@ -16,7 +16,7 @@ import {
 } from "../Components/StyledComponents";
 
 export const Frontpage = () => {
-  const { data, setData } = useContext(DataContext);
+  const { data } = useContext(DataContext);
   const [audio, setAudio] = useState();
   useEffect(() => {
     data.map((item, index) => {
