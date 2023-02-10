@@ -66,7 +66,9 @@ export const Frontpage = () => {
                       );
                     })}
                     {item.synonyms.length > 0 && (
-                      <p>Synonyms {item.synonyms}</p>
+                      <p>
+                        Synonyms <StyledSpan>{item.synonyms}</StyledSpan>
+                      </p>
                     )}
                   </StyledColumnDiv>
                 );
@@ -76,7 +78,10 @@ export const Frontpage = () => {
               return (
                 <StyledColumnDiv source>
                   <StyledP gray>
-                    Source: <a>{item}</a>
+                    Source:
+                    <a href={item} rel="norefferer">
+                      {item}
+                    </a>
                   </StyledP>
                 </StyledColumnDiv>
               );

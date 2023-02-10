@@ -23,7 +23,7 @@ export const ContainerDiv = styled.div`
   flex-direction: column;
   align-items: center;
   width: 50%;
-  border-bottom: 0.1em gray solid;
+  border-bottom: 0.1em rgb(128, 128, 128, 0.7) solid;
   ${(props) => {
     if (props.upper)
       return `
@@ -70,4 +70,8 @@ export const StyledLineDiv = styled.div`
   width: 100%;
   opacity: 0.3;
   margin-left: 1em;
+`;
+
+export const StyledSpan = styled.span`
+  color: purple;
 `;
