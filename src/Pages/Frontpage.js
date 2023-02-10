@@ -1,7 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../Components/Context";
+import { Search } from "../Components/Search";
 import {
   ContainerDiv,
+  PlayIcon,
+  StyledButton,
   StyledColumnDiv,
   StyledH1,
   StyledH2,
@@ -19,7 +22,6 @@ export const Frontpage = () => {
     data.map((item, index) => {
       item.phonetics.slice(1, 2).map((item, index) => {
         setAudio(new Audio(item.audio));
-        console.log(audio);
       });
     });
   }, []);
@@ -29,9 +31,7 @@ export const Frontpage = () => {
 
   return (
     <StyledSection>
-      <div>
-        <h1>Frontpage</h1>
-      </div>
+      <Search />
       {data.map((item, index) => {
         return (
           <>
@@ -44,7 +44,9 @@ export const Frontpage = () => {
                   })}
                 </div>
                 <div>
-                  <button onClick={() => play()}>play</button>
+                  <StyledButton onClick={() => play()}>
+                    <PlayIcon />
+                  </StyledButton>
                 </div>
               </StyledRowDiv>
               {item.meanings.map((item, index) => {

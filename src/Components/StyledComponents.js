@@ -1,4 +1,17 @@
 import styled from "styled-components";
+import { BsPlayCircle } from "react-icons/bs";
+
+export const PlayIcon = styled(BsPlayCircle)`
+  width: 70px;
+  height: 70px;
+  fill: purple;
+`;
+
+export const StyledButton = styled.button`
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+`;
 
 export const StyledRowDiv = styled.div`
   display: flex;

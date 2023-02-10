@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Frontpage } from "./Pages/Frontpage";
 import { useEffect, useState } from "react";
