@@ -1,5 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import { SearchContext } from "./Context";
+import { SearchIcon, StyledForm, StyledInput } from "./StyledComponents";
+import { InputAdornment } from "@mui/material";
 
 export const Search = () => {
   const { search, setSearch } = useContext(SearchContext);
@@ -11,11 +13,18 @@ export const Search = () => {
     form.current.reset();
   };
   return (
-    <form onSubmit={searchWord} ref={form}>
-      <input
+    <StyledForm onSubmit={searchWord} ref={form}>
+      <StyledInput
         type="text"
         onInput={(e) => setInput((input) => (input = e.target.value))}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment disableTypography position="end">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
       />
-    </form>
+    </StyledForm>
   );
 };

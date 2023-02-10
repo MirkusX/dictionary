@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { BsPlayCircle } from "react-icons/bs";
+import { BsPlayCircle, BsSearch } from "react-icons/bs";
+import { TextField } from "@mui/material";
+
+export const SearchIcon = styled(BsSearch)``;
 
 export const PlayIcon = styled(BsPlayCircle)`
   width: 70px;
@@ -87,4 +90,18 @@ export const StyledLineDiv = styled.div`
 
 export const StyledSpan = styled.span`
   color: purple;
+`;
+
+export const StyledInput = styled(TextField)`
+  width: 50%;
+  border-radius: 5px;
+  background-color: lightgray;
+  border: none;
+  padding: 0.5em;
+  box-sizing: border-box;
+  font-size: 1.3rem;
+`;
+
+export const StyledForm = styled.form`
+  width: 100%;
 `;
