@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { DataContext } from "../Components/Context";
+import { DataContext, SearchContext } from "../Components/Context";
 import { Search } from "../Components/Search";
 import {
   ContainerDiv,
@@ -24,7 +24,7 @@ export const Frontpage = () => {
         setAudio(new Audio(item.audio));
       });
     });
-  }, []);
+  }, [data]);
   const play = () => {
     audio.play();
   };
