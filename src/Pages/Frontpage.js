@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { DataContext, SearchContext } from "../Components/Context";
+import { NavBar } from "../Components/NavBar";
 import { Search } from "../Components/Search";
 import {
   ContainerDiv,
@@ -31,6 +32,7 @@ export const Frontpage = () => {
 
   return (
     <StyledSection>
+      <NavBar />
       <Search />
       {data.map((item, index) => {
         return (
@@ -68,9 +70,14 @@ export const Frontpage = () => {
                       );
                     })}
                     {item.synonyms.length > 0 && (
-                      <p>
-                        Synonyms <StyledSpan>{item.synonyms}</StyledSpan>
-                      </p>
+                      <div>
+                        <p>
+                          Synonyms <StyledSpan>{item.synonyms}</StyledSpan>
+                        </p>
+                        {item.synonyms.map((item, index) => {
+                          <p key={index}>{item}</p>;
+                        })}
+                      </div>
                     )}
                   </StyledColumnDiv>
                 );

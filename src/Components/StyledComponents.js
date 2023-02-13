@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { BsPlayCircle, BsSearch } from "react-icons/bs";
 import { TextField } from "@mui/material";
+import { BiBook } from "react-icons/bi";
+
+export const BookIcon = styled(BiBook)`
+  width: 25px;
+  height: 25px;
+`;
 
 export const SearchIcon = styled(BsSearch)``;
 

@@ -1,7 +1,9 @@
+import { BookIcon } from "./StyledComponents";
+
 export const NavBar = () => {
   return (
     <div>
-      <h1>navbar</h1>
+      <BookIcon />
     </div>
   );
 };
