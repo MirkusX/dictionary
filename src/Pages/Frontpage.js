@@ -85,7 +85,7 @@ export const Frontpage = () => {
             {item.sourceUrls.map((item, index) => {
               return (
                 <StyledColumnDiv source>
-                  <StyledP gray>
+                  <StyledP sourceGray>
                     Source:
                     <a href={item} rel="norefferer">
                       {item}
@@ -94,6 +94,7 @@ export const Frontpage = () => {
                 </StyledColumnDiv>
               );
             })}
+            <Space />
           </>
         );
       })}

@@ -1,6 +1,11 @@
-import { BookIcon, MoonIcon, StyledRowDiv } from "./StyledComponents";
+import {
+  BookIcon,
+  MoonIcon,
+  StyledOption,
+  StyledRowDiv,
+  StyledSelect,
+} from "./StyledComponents";
 import { Switch } from "@mui/material";
-import { useState } from "react";
 import { useEffect } from "react";
 import { useReducer } from "react";
 import { initialState, reducer } from "./useReducer";
@@ -28,7 +33,7 @@ export const NavBar = () => {
     <StyledRowDiv navBar>
       <BookIcon />
       <div>
-        <select onChange={(e) => toggleFont(e)}>
+        <StyledSelect onChange={(e) => toggleFont(e)}>
           <option
             value="'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -37,7 +42,7 @@ export const NavBar = () => {
             Segoe UI
           </option>
           <option value="'Courier New', Courier, monospace">Courier New</option>
-        </select>
+        </StyledSelect>
         <Switch onChange={toggleState} />
         <MoonIcon />
       </div>

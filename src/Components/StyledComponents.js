@@ -3,7 +3,16 @@ import { BsPlayCircle, BsSearch, BsMoon } from "react-icons/bs";
 import { TextField } from "@mui/material";
 import { BiBook } from "react-icons/bi";
 
-export const MoonIcon = styled(BsMoon)``;
+export const StyledSelect = styled.select`
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+`;
+
+export const MoonIcon = styled(BsMoon)`
+  vertical-align: middle;
+`;
 
 export const BookIcon = styled(BiBook)`
   width: 50px;
@@ -91,8 +100,7 @@ export const StyledP = styled.p`
   ${(props) => {
     if (props.gray)
       return `
-    color: gray;
-    margin: 1;`;
+    color: gray;`;
   }}
   ${(props) => {
     if (props.grayCursive)
@@ -106,6 +114,12 @@ export const StyledP = styled.p`
       return `
     color: inherit;
     margin: 0;`;
+  }}
+  ${(props) => {
+    if (props.sourceGray)
+      return `
+    color: gray;
+    margin: 1em 0;`;
   }}
 `;
 
