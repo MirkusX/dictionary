@@ -5,6 +5,7 @@ import { Search } from "../Components/Search";
 import {
   ContainerDiv,
   PlayIcon,
+  Space,
   StyledButton,
   StyledColumnDiv,
   StyledH1,
@@ -14,6 +15,7 @@ import {
   StyledRowDiv,
   StyledSection,
   StyledSpan,
+  StyledUl,
 } from "../Components/StyledComponents";
 
 export const Frontpage = () => {
@@ -70,18 +72,17 @@ export const Frontpage = () => {
                       );
                     })}
                     {item.synonyms.length > 0 && (
-                      <div>
-                        <p>
-                          Synonyms <StyledSpan>{item.synonyms}</StyledSpan>
-                        </p>
+                      <StyledRowDiv syno>
+                        <StyledP noMargin>Synonyms</StyledP>
                         {item.synonyms.map((item, index) => {
-                          <p key={index}>{item}</p>;
+                          return <StyledP key={index}>{item}</StyledP>;
                         })}
-                      </div>
+                      </StyledRowDiv>
                     )}
                   </StyledColumnDiv>
                 );
               })}
+              <Space />
             </ContainerDiv>
             {item.sourceUrls.map((item, index) => {
               return (

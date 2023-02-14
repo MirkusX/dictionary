@@ -28,6 +28,15 @@ export const StyledRowDiv = styled.div`
   justify-content: space-between;
   width: 100%;
   text-align: left;
+  ${(props) => {
+    if (props.syno)
+      return `
+    align-items: center;
+    justify-content: inherit;
+    gap: 1em;
+    flex-wrap: wrap;
+    `;
+  }}
 `;
 
 export const StyledColumnDiv = styled.div`
@@ -69,16 +78,25 @@ export const StyledH1 = styled.h1`
 
 export const StyledP = styled.p`
   color: purple;
+  margin: 0;
   ${(props) => {
     if (props.gray)
       return `
-    color: gray;`;
+    color: gray;
+    margin: 1;`;
   }}
   ${(props) => {
     if (props.grayCursive)
       return `
     color: gray;
-    font-style: italic`;
+    font-style: italic;
+    margin: 1;`;
+  }}
+  ${(props) => {
+    if (props.noMargin)
+      return `
+    color: inherit;
+    margin: 0;`;
   }}
 `;
 
@@ -110,4 +128,8 @@ export const StyledInput = styled(TextField)`
 
 export const StyledForm = styled.form`
   width: 100%;
+`;
+
+export const Space = styled.div`
+  margin: 1em 0;
 `;
