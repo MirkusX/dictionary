@@ -53,7 +53,11 @@ export const StyledRowDiv = styled.div`
       return `
     justify-content: space-between;
     width: 50%;
-    padding: 1.5em 0`;
+    padding: 1.5em 0;
+    @media (max-width: 811px) {
+      width: 90%;
+    }
+    `;
   }}
 `;
 
@@ -63,7 +67,10 @@ export const StyledColumnDiv = styled.div`
   ${(props) => {
     if (props.source)
       return `
-    width: 50%;`;
+    width: 50%;
+    @media (max-width: 811px) {
+      width: 90%;
+    }`;
   }}
 `;
 
@@ -73,6 +80,9 @@ export const ContainerDiv = styled.div`
   align-items: center;
   width: 50%;
   border-bottom: 0.1em rgb(128, 128, 128, 0.7) solid;
+  @media (max-width: 811px) {
+    width: 90%;
+  }
   ${(props) => {
     if (props.upper)
       return `
@@ -147,6 +157,9 @@ export const StyledInput = styled(TextField)`
   padding: 0.5em;
   box-sizing: border-box;
   font-size: 1.3rem;
+  @media (max-width: 811px) {
+    width: 90%;
+  }
 `;
 
 export const StyledForm = styled.form`
