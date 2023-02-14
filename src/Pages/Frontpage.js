@@ -29,11 +29,10 @@ export const Frontpage = () => {
       });
     });
   }, [data]);
-  //function for playing audio
+  //function for playing audio state
   const play = () => {
     audio.play();
   };
-
   return (
     <StyledSection>
       <NavBar />
