@@ -17,8 +17,11 @@ import {
 } from "../Components/StyledComponents";
 
 export const Frontpage = () => {
+  //usecontext for data state
   const { data } = useContext(DataContext);
+  //state for audio
   const [audio, setAudio] = useState();
+  //useeffect that gets audio link from data & preloads audio and sets it in audio state, triggers on when data is got
   useEffect(() => {
     data.map((item, index) => {
       item.phonetics.slice(1, 2).map((item, index) => {
@@ -26,6 +29,7 @@ export const Frontpage = () => {
       });
     });
   }, [data]);
+  //function for playing audio
   const play = () => {
     audio.play();
   };

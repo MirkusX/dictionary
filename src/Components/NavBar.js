@@ -1,7 +1,6 @@
 import {
   BookIcon,
   MoonIcon,
-  StyledOption,
   StyledRowDiv,
   StyledSelect,
 } from "./StyledComponents";
@@ -11,14 +10,17 @@ import { useReducer } from "react";
 import { initialState, reducer } from "./useReducer";
 
 export const NavBar = () => {
+  //import reducer and initialstate
   const [state, dispatch] = useReducer(reducer, initialState);
+  //toggle state.theme between true and false
   const toggleState = () => {
     dispatch({ type: "theme" });
   };
+  //change what state.font contains based on value in select options
   const toggleFont = (e) => {
     dispatch({ type: "font", payload: e.target.value });
-    console.log(state.theme);
   };
+  //useeffect for changing styles on body, triggered by toggleState and toggleFont functions
   useEffect(() => {
     if (state.theme === true) {
       document.body.style.background = "black";

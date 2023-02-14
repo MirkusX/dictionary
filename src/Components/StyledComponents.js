@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { BsPlayCircle, BsSearch, BsMoon } from "react-icons/bs";
 import { TextField } from "@mui/material";
 import { BiBook } from "react-icons/bi";
-
+//stylings
 export const StyledSelect = styled.select`
-  background-color: inherit;
   color: inherit;
+  background: inherit;
   border: none;
   cursor: pointer;
 `;

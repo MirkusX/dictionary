@@ -5,9 +5,13 @@ import axios from "axios";
 import { DataContext, SearchContext } from "./Components/Context";
 
 function App() {
+  //search state
   const [search, setSearch] = useState("hello");
+  //data state
   const [data, setData] = useState();
+  //error state
   const [error, setError] = useState();
+  //function that gets data
   const getData = () => {
     axios
       .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${search}`)
@@ -18,6 +22,7 @@ function App() {
         setError(res);
       });
   };
+  //useeffect that gets data whenever search state is changed
   useEffect(() => {
     getData();
   }, [search]);

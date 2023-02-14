@@ -1,8 +1,9 @@
+//initial states for reducer
 export const initialState = {
   theme: false,
   font: "",
 };
-
+//reducer function
 export const reducer = (state, action) => {
   switch (action.type) {
     case "theme":
