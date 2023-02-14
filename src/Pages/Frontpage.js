@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { DataContext, SearchContext } from "../Components/Context";
+import { DataContext } from "../Components/Context";
 import { NavBar } from "../Components/NavBar";
 import { Search } from "../Components/Search";
 import {
@@ -14,8 +14,6 @@ import {
   StyledP,
   StyledRowDiv,
   StyledSection,
-  StyledSpan,
-  StyledUl,
 } from "../Components/StyledComponents";
 
 export const Frontpage = () => {

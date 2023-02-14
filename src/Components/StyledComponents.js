@@ -1,11 +1,13 @@
 import styled from "styled-components";
-import { BsPlayCircle, BsSearch } from "react-icons/bs";
+import { BsPlayCircle, BsSearch, BsMoon } from "react-icons/bs";
 import { TextField } from "@mui/material";
 import { BiBook } from "react-icons/bi";
 
+export const MoonIcon = styled(BsMoon)``;
+
 export const BookIcon = styled(BiBook)`
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
 `;
 
 export const SearchIcon = styled(BsSearch)``;
@@ -36,6 +38,13 @@ export const StyledRowDiv = styled.div`
     gap: 1em;
     flex-wrap: wrap;
     `;
+  }}
+  ${(props) => {
+    if (props.navBar)
+      return `
+    justify-content: space-between;
+    width: 50%;
+    padding: 1.5em 0`;
   }}
 `;
 
